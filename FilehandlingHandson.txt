@@ -1,0 +1,18 @@
+anystore - Billing and Inventory Management System
+
+This is a simple desktop application
+
+Modules and Features
+
+1. User Module - Manages all the User 
+Read input user details(userid,fname,lname,email,phone) from console and store it in user.txt file
+
+2. Category Module - Manages all the Category for products 
+Read Category details(categoryid,categorytype) from console and store it in category.txt file
+
+3. Product Module - Manages all the Product
+Read product details(Productid,categorytype,productname,quantity,price) from console and store it in product.txt file
+
+4.Purchase and Sales Module - Purchase Products from Dealer and Sell Products to Consumers
+Read product details(SalesId,Productid,price,salesdate) from console and store it in purchase.txt file
+
