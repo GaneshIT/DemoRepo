@@ -1,10 +1,13 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.IO; //File handling
 //File handling
+
+//String functions - string.contains(),string.Startwith(), string.endswith()
+//Collections - Generic collectoin, Non-Generic Collection
 
 namespace OOPSConsoleDemo
 {
@@ -25,24 +28,32 @@ namespace OOPSConsoleDemo
 
             //How to declare array
             string[] values = { "A", "B", "C", "D", "E" }; //dynamic array
-            int[] studId = new int[2]; //fixed array
+            int[] studId = new int[2]; //fixed array         
             string[] studName = new string[2];
             int[] studMarks = new int[2];
             FileStream fileStreamObj = new FileStream(@"C:\Training\DotnetAzureTraining\myfile.txt", FileMode.Open, FileAccess.Read);
             StreamReader streamReaderObj = new StreamReader(fileStreamObj);
-            streamReaderObj.ReadLine();
-            Console.WriteLine("StudId\tName\tMarks");
+            streamReaderObj.ReadLine(); 
+            Console.WriteLine("StudId\tName\tMarks\tAge");
             while (streamReaderObj.Peek()>0) 
             {
-                string line = streamReaderObj.ReadLine(); //1,A,20    ','
-                string[] myStrs = line.Split(',');
-                //myStrs[0]="1"
-                //myStrs[1]="A"
-                //myStrs[2]="20"
-                Console.WriteLine(myStrs[0] + "\t" + myStrs[1] + "\t" + myStrs[2]);
+                string line = streamReaderObj.ReadLine(); //studid
+                if (line != "")
+                    if (!line.StartsWith("stud"))
+                    {
+                        string[] myStrs = line.Split(',');//exception
+                                                          //myStrs[0]="1"
+                                                          //myStrs[1]="A"
+                                                          //myStrs[2]="20"
+                        string[] mymarkage = myStrs[2].Split('-');
+                        Console.WriteLine(myStrs[0] + "\t" + myStrs[1] + "\t" + mymarkage[0]+"\t"+mymarkage[1]);
+                    }
             }
             Console.WriteLine("*********");
             Console.WriteLine("Read operation completed");
+           
         }
     }
 }
+
+
