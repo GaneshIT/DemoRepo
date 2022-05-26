@@ -1,0 +1,13 @@
+Class Library: Hands on.
+Create EB Bill project, It should generate ebBill based on CustomerID.
+
+ShowCustomerDetails by passing customer id
+
+ShowEbBill by passing customerId
+
+ShowEbBillReport() for all the customers 
+
+CustomerData can have 10 records( Should be saved details in files)
+
+
+And integrate dll file in class library and input passed from console to dll and display output in the console window.
