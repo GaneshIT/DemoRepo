@@ -1,0 +1,38 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace EntityframeworkDemo
+{
+    class employee
+    {
+        public int Id { get; set; }
+        public string Name { get; set; }
+    }
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            BankDbEntities dbEntities = new BankDbEntities();
+
+            //select * from customers
+            var customerData = dbEntities.Customers.ToList();
+
+            Customer customer = new Customer();
+            customer.CustId = 5;
+            customer.Email = "vasu@gmail.com";
+            customer.CustName = "Vaus";
+            customer.CustAddress = "Chennai";
+            customer.Mobile = 343;
+
+
+            dbEntities.Customers.Add(customer);//insert into Customers values(customer.CustId,customer.CustName
+            dbEntities.SaveChanges(); //execute and save data in db
+
+
+            
+        }
+    }
+}
